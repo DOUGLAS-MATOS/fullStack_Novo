@@ -1,0 +1,72 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr; /* Coluna da esquerda (aside) vs. coluna da direita (main) */
+  grid-template-rows: auto auto 1fr auto;
+  gap: 0px; /* Remove o espaçamento entre os elementos, a imagem não tem espaçamento */
+  min-height: 100vh; /* Garante que o grid ocupe pelo menos a altura total da tela */
+}
+
+.header {
+  grid-column: 1 / 3;
+  background-color: #34495e;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinha verticalmente os itens do header */
+  padding: 10px;
+}
+
+.header .nav {
+  display: flex;
+  gap: 10px; /* Reduz o espaçamento entre os links */
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+}
+
+.aside {
+  /* Os três blocos precisam de altura fixa. Dividindo por 3 arredondado: ) */
+  grid-row: 2 / 5; /* O aside ocupa da linha 2 à 5 */
+  background-color: #e74c3c;
+  padding: 10px;
+}
+
+.image-placeholder {
+  background-color: #f39c12;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.box {
+  background-color: #f39c12;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  grid-template-rows: auto repeat(4, 1fr); /* Título + 4 linhas = 5 linhas no total */
+  gap: 10px;
+  padding: 10px;
+}
+
+.main > section {
+  background-color: #ecf0f1;
+  padding: 10px;
+}
+
+.main > section h2 {
+  text-align: center; /* Centraliza o texto do título */
+}
+
+.footer {
+  grid-column: 1 / 3;
+  background-color: #34495e;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.8em; /* Reduz o tamanho da fonte */
+}

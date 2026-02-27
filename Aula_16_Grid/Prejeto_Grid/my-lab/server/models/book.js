@@ -1,0 +1,32 @@
+const {default : mongoose} = require('mongoose');
+
+const BookSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true
+    },
+        isbn: {
+            type: String,
+            required: true
+        },
+        author: {
+            type: String,
+            required: true
+        },
+        description: {
+            type: String,
+        },
+        published_data: {
+            type: Date
+        },
+        publisher: {
+            type: String
+        },
+        update_date: {
+            type: Date,
+            default: Date.now
+        },
+
+});
+
+module.exports = mongoose.model('Book', BookSchema);
