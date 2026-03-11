@@ -12,7 +12,6 @@ router.get('/test', (req, res) => res.send({ msg: 'Testando rota book' }));
 
 //GET api/books
 //pegar todos os livros
-
 router.get('/', (req, res) => {
     Book.find()
         .then(books => res.json(books))
@@ -21,7 +20,6 @@ router.get('/', (req, res) => {
 
 //GET api/books/:id
 //Pegar unico livro por ID
-
 router.get('/:id', (req, res) => {
     Book.findById(req.params.id)
         .then(book => res.json(book))
@@ -30,7 +28,6 @@ router.get('/:id', (req, res) => {
 
 //POST api/books
 //Adicionar/Salvar livro
-
 router.post('/', (req, res) => {
     Book.create(req.body)
         .then(book => res.json({msg: 'Livro adicionado com sucesso'}))
@@ -39,7 +36,6 @@ router.post('/', (req, res) => {
 
 //PUT api/books/:id
 //Atualizar o Livro
-
 router.put('/:id', (req, res) => {
     Book.findByIdAndUpdate(req.params.id, req.body)
         .then(book => res.json({msg: 'Livro atualizado com sucesso'}))
@@ -48,7 +44,6 @@ router.put('/:id', (req, res) => {
 
 //DELETE api/books/:id
 //Deletar o Livro por id
-
 router.delete('/:id', (req, res) => {
     Book.findByIdAndDelete(req.params.id, req.body)
         .then(book => res.json({msg: 'Livro deletado com sucesso'}))
